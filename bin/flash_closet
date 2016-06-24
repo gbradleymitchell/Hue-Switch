@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "hue_switch"
+require "pry"
+
+switch = Switch.new
+switch.light :closet
+switch.color :red
+
+10.times {
+  switch.off
+  sleep(0.5)
+  switch.on
+  sleep (0.5)
+}
+
+
+switch.on
